@@ -1,0 +1,163 @@
+@media screen and (max-width: 1000px) {
+  p {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+
+  .card-box {
+    gap: 1rem;
+    margin: 3rem;
+  }
+
+  .grid-3 {
+    gap: 1rem;
+    margin: 3rem;
+    width: 70%;
+  }
+
+  #project {
+    margin: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .toggle-burger .line-1 {
+    transform: rotate(-45deg) translate(-5px, 7px);
+  }
+
+  .toggle-burger .line-2 {
+    opacity: 0%;
+  }
+
+  .toggle-burger .line-3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+  .main-container {
+    position: fixed;
+  }
+
+  nav {
+    position: fixed;
+    width: 50%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    background-color: white;
+    border-left: 1px solid grey;
+    z-index: 9;
+    transform: translateX(100%);
+    transition: 0.3s ease-in-out;
+  }
+
+  nav ul {
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-active {
+    transform: translateX(0);
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin: 0.6rem 0 2.5rem;
+  }
+
+  .pre-title {
+    font-size: 0.8rem;
+  }
+
+  #home {
+    grid-template-columns: 1fr;
+    height: fit-content;
+    margin: 3rem;
+  }
+
+  .home-right {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-right img {
+    width: 70%;
+  }
+
+  .home-left {
+    padding-bottom: 5rem;
+    padding-left: 3rem;
+    margin-top: 3rem;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    margin-top: 0;
+    height: fit-content;
+    margin: 3rem;
+  }
+
+  .about-left img {
+    width: 70%;
+  }
+
+  .about-left {
+    padding-bottom: 5rem;
+    margin-top: 3rem;
+  }
+
+  #skill {
+    margin-bottom: 2rem; /* Space below the Skill section */
+    height: fit-content;
+  }
+
+  #contact {
+    margin: 3rem;
+    padding-top: 10rem;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* Titles */
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .pre-title {
+    font-size: 0.7rem;
+  }
+
+  #skill,
+  #project {
+    padding: 1.5rem; /* Optional padding for extra space */
+  }
+
+  #skill {
+    margin-bottom: 1.5rem;
+  }
+
+  footer {
+    width: 100%;
+  }
+}

@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --primaryTextColor: #232e35; /* Untuk title atau judul */
+  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+
+  --borderColor: #f1f1f1;
+  --lineColor: #d9d9d9; /* untuk line di pre-title */
+
+  --primaryIconColor: #7e74f1;
+  --primaryIconColorHover: #5d51e8;
+
+  --itemBorderRadius: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--secondaryTextColor);
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Smooth scrolling effect */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust padding for sections to avoid overlap with header */
+section {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: 0.2s ease-in-out;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* navigation style */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav ul li a {
+  color: var(--primaryTextColor);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.logo a {
+  color: var(--primaryTextColor);
+}
+
+/* burger */
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  margin: 7px;
+  transition: all 0.3s;
+  z-index: 99;
+}
+
+.burger {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 33px;
+  right: 65px;
+}
+
+/* home style */
+#home {
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 20xp;
+}
+
+.pre-title {
+  letter-spacing: 0.2rem;
+  color: var(--lineColor);
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 100px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  z-index: -1;
+}
+
+.pre-title::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1.5px solid rgb(173, 172, 172);
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 200;
+}
+
+.btn:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+.home-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  color: var(--primaryTextColor);
+}
+
+.home-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-right img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ddd;
+}
+
+/* about style */
+#about {
+  height: 800px;
+  width: 100%;
+  max-width: 1200px;
+  height: fit-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.about-left img {
+  width: 450px; /* Ukuran yang lebih kecil agar terlihat proporsional */
+  height: 550px;
+  margin-right: 12rem;
+  border-radius: 10%; /* Membuat gambar menjadi lingkaran */
+  object-fit: cover; /* Menjaga proporsi gambar dalam lingkaran */
+}
+
+.about-left {
+  width: 550px;
+}
+
+.about-right {
+  width: 550px;
+}
+
+#about h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  color: var(--primaryTextColor);
+}
+
+/* skill style */
+#skill {
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  align-items: center;
+  justify-content: center;
+}
+
+#skill h3 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primaryTextColor);
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+.card-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop default */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card i:hover {
+  color: var(--primaryIconColorHover);
+}
+
+.fa-brands {
+  font-size: 70px;
+  color: #333;
+}
+
+/* Portfolios */
+#projects {
+  width: 100%;
+  max-width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+  padding-bottom: 3rem; /* Tambahkan padding bawah */
+}
+
+.project-main-container {
+  height: 700px;
+  margin-bottom: 3rem; /* Tambahkan margin bawah */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-main-container h1 {
+  color: var(--primaryTextColor);
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.project {
+  border-radius: var(--itemBorderRadius);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.project:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.project-cover {
+  height: 250px;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 2rem 1.5rem;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.project-title a svg:hover {
+  fill: var(--primaryIconColor);
+}
+
+.project-title a svg {
+  transition: 0.2s ease-in-out;
+}
+
+/* contact style */
+#contact {
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: white;
+  border: solid 1px gainsboro;
+  border-radius: 3px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid grey;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: #333;
+  color: aliceblue;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: rgb(209, 207, 207);
+  color: black;
+}
+
+/* footer style */
+footer {
+  margin-bottom: 0;
+  padding: 4rem 0;
+  background-color: rgb(209, 207, 207);
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icons a {
+  margin: 0.5rem;
+}
+
+.home-right img,
+.about-left img {
+  width: 450px;
+  height: auto;
+}
